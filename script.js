@@ -1,5 +1,5 @@
-let HEIGHT = 16;
-let WIDTH = 16;
+let HEIGHT = 17;
+let WIDTH = 17;
 
 function createGrid(height, width){
     let squareSideSize = (gridSquareSize(height, width));
@@ -30,11 +30,17 @@ function gridSquareSize(height, width){
 
 createGrid(HEIGHT, WIDTH);
 
+let heightAndWidth = gridSquareSize(HEIGHT, WIDTH);
+let sizeWidth = 'width: ' + heightAndWidth + 'px';
+
 const squares = document.querySelectorAll('.grid');
 
-let heightAndWidth = gridSquareSize(HEIGHT, WIDTH);
-let size = 'width: ' + heightAndWidth + 'px';
+squares.forEach((grid) => {
+    grid.setAttribute('style', sizeWidth);
+});
 
 squares.forEach((grid) => {
-    grid.setAttribute('style', size);
-});
+    grid.addEventListener('mouseover', (e) => {
+        grid.classList.add('grids');
+    })
+})

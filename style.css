@@ -25,6 +25,9 @@ body {
 .grid {
     background-color: blanchedalmond;
     display: flex;
-    height: auto;
-    width: auto;
+}
+
+.grids {
+    background-color: black;
+    display: flex;
 }
