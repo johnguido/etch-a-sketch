@@ -7,7 +7,7 @@ body {
 
 .main-container {
     background-color: red;
-    height: 750px;
+    height: 1000px;
     width: 1000px;
     display: flex;
     justify-content: center;
@@ -16,16 +16,15 @@ body {
 
 .inner-container {
     background-color: black;
-    height: 550px;
+    height: 800px;
     width: 800px;
     display: flex;
     flex-wrap: wrap;
 }
 
-#grid {
+.grid {
     background-color: blanchedalmond;
-    border: blue;
-    border-style: solid;
     display: flex;
-    flex-grow: 0;
+    height: auto;
+    width: auto;
 }
