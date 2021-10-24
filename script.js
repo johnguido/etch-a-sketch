@@ -14,7 +14,6 @@ function createAndAddSquareToInnerContainer(height, width, squareSideSize){
     const innerContainer = document.querySelector('.inner-container');
     const square = document.createElement('div');
     square.setAttribute('id', 'grid');
-    
     innerContainer.appendChild(square);
 }
 
