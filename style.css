@@ -9,6 +9,7 @@ body {
     background-color: red;
     height: 1000px;
     width: 1000px;
+    gap: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +19,7 @@ body {
     background-color: black;
     height: 800px;
     width: 800px;
+    margin-right: 40px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -30,4 +32,9 @@ body {
 .grids {
     background-color: black;
     display: flex;
+}
+
+.reset-button {
+    margin-bottom: 885px;
+    margin-right: auto;
 }

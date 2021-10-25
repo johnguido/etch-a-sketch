@@ -1,5 +1,6 @@
 let HEIGHT = 17;
 let WIDTH = 17;
+let RESET = true;
 
 function createGrid(height, width){
     let squareSideSize = (gridSquareSize(height, width));
@@ -28,19 +29,72 @@ function gridSquareSize(height, width){
     return squareHeightandWidth;
 }
 
-createGrid(HEIGHT, WIDTH);
+function gridReset(){
+    askForGridSize();
+    removeAllSquares();
+    createGrid(HEIGHT, WIDTH);
+    asignGridSize();
+    hoverEffect();
+}
 
-let heightAndWidth = gridSquareSize(HEIGHT, WIDTH);
-let sizeWidth = 'width: ' + heightAndWidth + 'px';
+function asignGridSize(){
+    let heightAndWidth = gridSquareSize(HEIGHT, WIDTH);
+    let sizeWidth = 'width: ' + heightAndWidth + 'px';
 
-const squares = document.querySelectorAll('.grid');
+    const squares = document.querySelectorAll('.grid');
 
-squares.forEach((grid) => {
-    grid.setAttribute('style', sizeWidth);
-});
+    squares.forEach((grid) => {
+        grid.setAttribute('style', sizeWidth);
+    });
+}
 
-squares.forEach((grid) => {
-    grid.addEventListener('mouseover', (e) => {
-        grid.classList.add('grids');
+function removeAllSquares(){
+    const squares = document.querySelectorAll('.grid');
+    squares.forEach((grid) => {
+        grid.remove();
     })
-})
+}
+
+function askForGridSize(){
+    while (true){
+        let gridSize = prompt('Enter grid size max 100');
+        if (gridSize < 101 && gridSize > 0){
+            HEIGHT = gridSize;
+            WIDTH = gridSize;
+            return gridSize;
+            break;
+        }else continue;
+    }
+}
+
+function createInitialGrid(){
+    createGrid(HEIGHT, WIDTH);
+    let heightAndWidth = gridSquareSize(HEIGHT, WIDTH);
+    let sizeWidth = 'width: ' + heightAndWidth + 'px';
+    const squares = document.querySelectorAll('.grid');
+    squares.forEach((grid) => {
+        grid.setAttribute('style', sizeWidth);
+    });
+}
+
+function hoverEffect(){
+    const squares = document.querySelectorAll('.grid');
+    squares.forEach((grid) => {
+        grid.addEventListener('mouseover', (e) => {
+            grid.classList.add('grids');
+        })
+    })
+    
+}
+
+function reset(){
+    const reset = document.querySelector('.reset-button');
+    reset.addEventListener('click', gridReset);
+}
+
+createInitialGrid();
+hoverEffect();
+reset();
+
+
+
