@@ -96,5 +96,8 @@ createInitialGrid();
 hoverEffect();
 reset();
 
+$('#hey').find('button').on('click', function(){
+    console.log('hey');
+})
 
 
